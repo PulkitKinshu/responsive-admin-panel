@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>delivr (assignment)</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <main class="d-flex">
+
+
+
+
+
+        <div class="sidebar">
+            <a href="#" class="logo"> <img src="./assets/scooter.png" alt=""> delivr</a>
+            <ul class="nav-list" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="5000"
+                data-aos-delay="400">
+                <li> <img src="./assets/dashboard.png" alt=""> Dashboard</li>
+                <li><img src="./assets/flag.png" alt="">Countries</li>
+                <li><img src="./assets/bus.png" alt="">Vehicle</li>
+                <li> <a data-toggle="collapse" data-target="#demo"> <img src="./assets/shop.png" alt="">
+                        Vendor <i class="fa"></i></a></li>
+
+
+                <div id="demo" class="collapse nav-list-child show">
+                    <li>Vendor Type</li>
+                    <li class="active">Vendor List</li>
+                </div>
+                <li><img src="./assets/wrench.png" alt="">Maintenance</li>
+                <li><img src="./assets/pay.png" alt="">Payment</li>
+                <li><img src="./assets/coupon.png" alt="">Coupon</li>
+                <li><img src="./assets/support.png" alt="">Request for Repair</li>
+                <li><img src="./assets/next.png" alt="">Request for Vendor</li>
+                <li><img src="./assets/module.png" alt="">Request for Module</li>
+                <li><img src="./assets/report.png" alt="">Report</li>
+            </ul>
+
+
+        </div>
+
+        <div class="main-content">
+            <div class="container-fluid pt-5 px-md-5">
+                <div class="d-flex justify-content-between align-items-center main-header">
+                    <h2>VENDOR LIST</h2>
+
+                    <div class="notification-icons bg-light">
+
+                        <div>
+                            <img src="./assets/notification.png" alt="">
+                            <i class="fas fa-caret-down"></i>
+                            <span class="badge badge-danger">4</span>
+
+                        </div>
+                        <div class="ml-3">
+                            <img src="./assets/user.png" alt="">
+                            <i class="fas fa-caret-down"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="secondary-header d-flex mt-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" aria-label="search user"
+                            aria-describedby="basic-addon2">
+
+                        <i class="fa fa-search"></i>
+
+                    </div>
+                </div>
+
+                <section class="mt-5">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Serial #</th>
+                                <th scope="col">Vendor Type</th>
+                                <th scope="col">Vendor Name</th>
+                                <th scope="col">Email Id</th>
+                                <th scope="col">Contact No</th>
+                                <th scope="col">Location</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Actions</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1024</td>
+                                <td>Mark</td>
+                                <td>Pulkit Agarwal</td>
+                                <td>@mdo</td>
+                                <td>+91-8619203728</td>
+                                <td>@mdo</td>
+                                <td>Active</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <td>1025</td>
+                                <td>Jacob</td>
+                                <td>Garvit Singhal</td>
+                                <td>@fat</td>
+                                <td>+91-8792037284</td>
+                                <td>@mdo</td>
+                                <td>Active</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <td>1027</td>
+                                <td>Larry</td>
+                                <td>Saranga Saxena</td>
+                                <td>@twitter</td>
+                                <td>+91-8674203728</td>
+                                <td>@mdo</td>
+                                <td>Inactive</td>
+                                <td>@mdo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>

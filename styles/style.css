@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css?family=Baloo+Bhaina+2:400,500,600,700|Nunito+Sans:300,400,600,700,800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-family: "Baloo Bhaina 2", cursive;
+}
+
+html {
+  font-size: 16px;
+}
+
+main {
+  min-height: 100vh;
+}
+
+main .sidebar {
+  width: 300px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(77, 70, 199, 0.96)), to(rgba(103, 178, 111, 0.83))), url("../assets/road.jpeg");
+  background-image: linear-gradient(to bottom, rgba(77, 70, 199, 0.96), rgba(103, 178, 111, 0.83)), url("../assets/road.jpeg");
+  background-size: cover;
+}
+
+main .sidebar .logo {
+  font-size: 30px;
+  color: #fff;
+  display: inline-block;
+  margin-left: 11%;
+  margin-top: 30px;
+  font-weight: 800;
+  position: relative;
+}
+
+main .sidebar .logo:hover {
+  text-decoration: unset;
+}
+
+main .sidebar .logo:after {
+  content: "food delivery";
+  color: #ffffff;
+  font-size: 6px;
+  display: block;
+  text-align: center;
+  position: relative;
+  top: -5px;
+}
+
+main .sidebar .logo img {
+  width: 33px;
+}
+
+main .sidebar ul.nav-list {
+  padding: 0 10px 0 15%;
+  margin-top: 30px;
+}
+
+main .sidebar ul.nav-list > li {
+  color: #fff;
+  font-size: 1.05rem;
+  margin: 30px 0;
+  list-style: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+main .sidebar ul.nav-list > li img {
+  width: 20px;
+  position: relative;
+  bottom: 2px;
+  margin-right: 9px;
+}
+
+main .sidebar ul.nav-list > li .fa {
+  margin-left: 50%;
+  font-size: 15px;
+}
+
+main .sidebar ul.nav-list [data-toggle="collapse"] .fa:before {
+  content: "\f078";
+}
+
+main .sidebar ul.nav-list [data-toggle="collapse"].collapsed .fa:before {
+  content: "\f054";
+}
+
+main .sidebar ul.nav-list .nav-list-child li {
+  color: #fff;
+  font-size: 1rem;
+  margin: 30px 0;
+  list-style: none;
+  font-weight: 600;
+  margin-left: 32px;
+}
+
+main .sidebar ul.nav-list .nav-list-child .active {
+  background-color: #ffffff54;
+  padding: 11px 0;
+  position: relative;
+  left: -76px;
+  width: 300px;
+  padding-left: 75px;
+  border-right: 6px solid gold;
+}
+
+main .main-content {
+  width: calc(100% - 300px);
+}
+
+main .main-content .main-header h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #4a4a4a;
+}
+
+main .main-content .main-header .notification-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+}
+
+main .main-content .main-header .notification-icons > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+main .main-content .main-header .notification-icons > div img {
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+}
+
+main .main-content .main-header .notification-icons > div .badge {
+  border-radius: 50%;
+  position: absolute;
+  left: 15px;
+  top: -10px;
+}
+
+main .main-content .secondary-header .input-group {
+  position: relative;
+  max-width: 300px;
+}
+
+main .main-content .secondary-header .input-group .form-control {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+main .main-content .secondary-header .input-group i {
+  position: absolute;
+  right: 15px;
+  top: 30%;
+  color: #6c757d;
+  z-index: 9;
+}
+/*# sourceMappingURL=style.css.map */

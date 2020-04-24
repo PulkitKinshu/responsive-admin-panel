@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css?family=Baloo+Bhaina+2:400,500,600,700|Nunito+Sans:300,400,600,700,800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-family: "Baloo Bhaina 2", cursive;
+}
+
+html {
+  font-size: 16px;
+}
+
+main {
+  min-height: 100vh;
+
+  .sidebar {
+    .logo {
+      font-size: 30px;
+      color: #fff;
+      display: inline-block;
+      margin-left: 11%;
+      margin-top: 30px;
+      font-weight: 800;
+      position: relative;
+      &:hover {
+        text-decoration: unset;
+      }
+
+      &:after {
+        content: "food delivery";
+        color: #ffffff;
+        font-size: 6px;
+        display: block;
+        text-align: center;
+        position: relative;
+        top: -5px;
+      }
+
+      img {
+        width: 33px;
+      }
+    }
+
+    width: 300px;
+    background-image: linear-gradient(to bottom, rgba(77, 70, 199, 0.96), rgba(103, 178, 111, 0.83)),
+      url("../assets/road.jpeg");
+    background-size: cover;
+
+    ul.nav-list {
+      padding: 0 10px 0 15%;
+      margin-top: 30px;
+      > li {
+        color: #fff;
+        font-size: 1.05rem;
+        margin: 30px 0;
+        list-style: none;
+        font-weight: 600;
+        cursor: pointer;
+
+        img {
+          width: 20px;
+          position: relative;
+          bottom: 2px;
+          margin-right: 9px;
+        }
+
+        .fa {
+          margin-left: 50%;
+          font-size: 15px;
+        }
+      }
+
+      [data-toggle="collapse"] .fa:before {
+        content: "\f078";
+      }
+
+      [data-toggle="collapse"].collapsed .fa:before {
+        content: "\f054";
+      }
+
+      .nav-list-child {
+        li {
+          color: #fff;
+          font-size: 1rem;
+          margin: 30px 0;
+          list-style: none;
+          font-weight: 600;
+          margin-left: 32px;
+        }
+
+        .active {
+          background-color: #ffffff54;
+          padding: 11px 0;
+          position: relative;
+          left: -76px;
+          width: 300px;
+          padding-left: 75px;
+          border-right: 6px solid gold;
+        }
+      }
+    }
+  }
+  .main-content {
+    width: calc(100% - 300px);
+
+    .main-header {
+      h2 {
+        margin: 0;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #4a4a4a;
+      }
+
+      .notification-icons {
+        display: flex;
+        padding: 10px;
+        > div {
+          display: flex;
+          align-items: center;
+          position: relative;
+          cursor: pointer;
+          img {
+            width: 22px;
+            height: 22px;
+            margin-right: 5px;
+          }
+          .badge {
+            border-radius: 50%;
+            position: absolute;
+            left: 15px;
+            top: -10px;
+          }
+        }
+      }
+    }
+    .secondary-header {
+      .input-group {
+        position: relative;
+        max-width: 300px;
+
+        .form-control {
+          border-top-right-radius: 0.25rem;
+          border-bottom-right-radius: 0.25rem;
+        }
+
+        i {
+          position: absolute;
+          right: 15px;
+          top: 30%;
+          color: #6c757d;
+          z-index: 9;
+        }
+      }
+    }
+  }
+}
