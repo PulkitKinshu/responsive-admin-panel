@@ -28,8 +28,9 @@
 
 
 
-        <div class="sidebarMain">
+        <div class="sidebarMain" id="mySideNav">
             <a href="#" class="logo"> <img src="./assets/scooter.png" alt=""> delivr</a>
+            <a href="javascript:void(0)" style="position: absolute; top: 10px; right: 30px; color: white !important;font-size: 32px;" onclick="closeSideNav()">×</a>
             <ul class="nav-list" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="5000"
                 data-aos-delay="400">
                 <li> <img src="./assets/dashboard.png" alt=""> Dashboard</li>
@@ -56,8 +57,9 @@
         </div>
 
         <div class="main-content">
-            <div class="container-fluid pt-5 px-md-5">
+            <div class="container-fluid pt-3 pt-lg-5 px-3 px-lg-5">
                 <div class="d-flex justify-content-between align-items-center main-header">
+                    <span class="d-md-none"><img src="./assets/menu.png"  type="btn" onclick="openSideNav()" alt="hamburger menu"></span>
                     <h2>VENDOR LIST</h2>
 
                     <div class="notification-icons bg-light">
@@ -75,14 +77,14 @@
                     </div>
                 </div>
 
-                <div class="secondary-header d-flex align-items-center justify-content-between mt-4">
-                    <div class="input-group">
+                <div class="secondary-header d-lg-flex align-items-center justify-content-between mt-4 no-gutters">
+                    <div class="input-group col-12 col-lg-4">
                         <input type="text" class="form-control" placeholder="Search" aria-label="search user"
                             aria-describedby="basic-addon2">
                         <i class="fa fa-search"></i>
                     </div>
 
-                    <div class="filter-icons d-flex">
+                    <div class="filter-icons d-flex mt-3 mt-lg-0">
                         <div type="btn" onclick="openNav()">
                             <img src="./assets/filter.png" alt="filter">
                         </div>
@@ -158,236 +160,244 @@
 
                     <div id="tabsContent" class="tab-content">
                         <div id="home1" class="tab-pane fade  active show">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Serial #</th>
-                                        <th scope="col">Vendor Type</th>
-                                        <th scope="col">Vendor Name</th>
-                                        <th scope="col">Email Id</th>
-                                        <th scope="col">Contact No</th>
-                                        <th scope="col">Location</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Actions</th>
+                            <div class="table-responsive">
 
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1025</td>
-                                        <td>Jacob</td>
-                                        <td>Garvit Singhal</td>
-                                        <td>@fat</td>
-                                        <td>+91-8792037284</td>
-                                        <td>@mdo</td>
-                                        <td>Active</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1027</td>
-                                        <td>Larry</td>
-                                        <td>Saranga Saxena</td>
-                                        <td>@twitter</td>
-                                        <td>+91-8674203728</td>
-                                        <td>@mdo</td>
-                                        <td>Inactive</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1025</td>
-                                        <td>Jacob</td>
-                                        <td>Garvit Singhal</td>
-                                        <td>@fat</td>
-                                        <td>+91-8792037284</td>
-                                        <td>@mdo</td>
-                                        <td>Active</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1024</td>
-                                        <td>Mark</td>
-                                        <td>Pulkit Agarwal</td>
-                                        <td>@mdo</td>
-                                        <td>+91-8619203728</td>
-                                        <td>@mdo</td>
-                                        <td>Active</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1025</td>
-                                        <td>Jacob</td>
-                                        <td>Garvit Singhal</td>
-                                        <td>@fat</td>
-                                        <td>+91-8792037284</td>
-                                        <td>@mdo</td>
-                                        <td>Active</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1027</td>
-                                        <td>Larry</td>
-                                        <td>Saranga Saxena</td>
-                                        <td>@twitter</td>
-                                        <td>+91-8674203728</td>
-                                        <td>@mdo</td>
-                                        <td>Inactive</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1025</td>
-                                        <td>Jacob</td>
-                                        <td>Garvit Singhal</td>
-                                        <td>@fat</td>
-                                        <td>+91-8792037284</td>
-                                        <td>@mdo</td>
-                                        <td>Active</td>
-                                        <td>@mdo</td>
-                                    </tr>
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Serial #</th>
+                                            <th scope="col">Vendor Type</th>
+                                            <th scope="col">Vendor Name</th>
+                                            <th scope="col">Email Id</th>
+                                            <th scope="col">Contact No</th>
+                                            <th scope="col">Location</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Actions</th>
 
-                                </tbody>
-                            </table>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1025</td>
+                                            <td>Jacob</td>
+                                            <td>Garvit Singhal</td>
+                                            <td>@fat</td>
+                                            <td>+91-8792037284</td>
+                                            <td>@mdo</td>
+                                            <td>Active</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1027</td>
+                                            <td>Larry</td>
+                                            <td>Saranga Saxena</td>
+                                            <td>@twitter</td>
+                                            <td>+91-8674203728</td>
+                                            <td>@mdo</td>
+                                            <td>Inactive</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1025</td>
+                                            <td>Jacob</td>
+                                            <td>Garvit Singhal</td>
+                                            <td>@fat</td>
+                                            <td>+91-8792037284</td>
+                                            <td>@mdo</td>
+                                            <td>Active</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1024</td>
+                                            <td>Mark</td>
+                                            <td>Pulkit Agarwal</td>
+                                            <td>@mdo</td>
+                                            <td>+91-8619203728</td>
+                                            <td>@mdo</td>
+                                            <td>Active</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1025</td>
+                                            <td>Jacob</td>
+                                            <td>Garvit Singhal</td>
+                                            <td>@fat</td>
+                                            <td>+91-8792037284</td>
+                                            <td>@mdo</td>
+                                            <td>Active</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1027</td>
+                                            <td>Larry</td>
+                                            <td>Saranga Saxena</td>
+                                            <td>@twitter</td>
+                                            <td>+91-8674203728</td>
+                                            <td>@mdo</td>
+                                            <td>Inactive</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1025</td>
+                                            <td>Jacob</td>
+                                            <td>Garvit Singhal</td>
+                                            <td>@fat</td>
+                                            <td>+91-8792037284</td>
+                                            <td>@mdo</td>
+                                            <td>Active</td>
+                                            <td>@mdo</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                         <div id="profile1" class="tab-pane fade">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Serial #</th>
-                                        <th scope="col">Vendor Type</th>
-                                        <th scope="col">Vendor Name</th>
-                                        <th scope="col">Email Id</th>
-                                        <th scope="col">Contact No</th>
-                                        <th scope="col">Location</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Actions</th>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Serial #</th>
+                                            <th scope="col">Vendor Type</th>
+                                            <th scope="col">Vendor Name</th>
+                                            <th scope="col">Email Id</th>
+                                            <th scope="col">Contact No</th>
+                                            <th scope="col">Location</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Actions</th>
 
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1025</td>
-                                        <td>Jacob</td>
-                                        <td>Garvit Singhal</td>
-                                        <td>@fat</td>
-                                        <td>+91-8792037284</td>
-                                        <td>@mdo</td>
-                                        <td>Active</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1025</td>
-                                        <td>Jacob</td>
-                                        <td>Garvit Singhal</td>
-                                        <td>@fat</td>
-                                        <td>+91-8792037284</td>
-                                        <td>@mdo</td>
-                                        <td>Active</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1024</td>
-                                        <td>Mark</td>
-                                        <td>Pulkit Agarwal</td>
-                                        <td>@mdo</td>
-                                        <td>+91-8619203728</td>
-                                        <td>@mdo</td>
-                                        <td>Active</td>
-                                        <td>@mdo</td>
-                                    </tr>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1027</td>
+                                            <td>Larry</td>
+                                            <td>Saranga Saxena</td>
+                                            <td>@twitter</td>
+                                            <td>+91-8674203728</td>
+                                            <td>@mdo</td>
+                                            <td>Inactive</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1025</td>
+                                            <td>Jacob</td>
+                                            <td>Garvit Singhal</td>
+                                            <td>@fat</td>
+                                            <td>+91-8792037284</td>
+                                            <td>@mdo</td>
+                                            <td>Active</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1025</td>
+                                            <td>Jacob</td>
+                                            <td>Garvit Singhal</td>
+                                            <td>@fat</td>
+                                            <td>+91-8792037284</td>
+                                            <td>@mdo</td>
+                                            <td>Active</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1024</td>
+                                            <td>Mark</td>
+                                            <td>Pulkit Agarwal</td>
+                                            <td>@mdo</td>
+                                            <td>+91-8619203728</td>
+                                            <td>@mdo</td>
+                                            <td>Active</td>
+                                            <td>@mdo</td>
+                                        </tr>
 
-                                    <tr>
-                                        <td>1027</td>
-                                        <td>Larry</td>
-                                        <td>Saranga Saxena</td>
-                                        <td>@twitter</td>
-                                        <td>+91-8674203728</td>
-                                        <td>@mdo</td>
-                                        <td>Inactive</td>
-                                        <td>@mdo</td>
-                                    </tr>
+                                      
 
 
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                         <div id="messages1" class="tab-pane fade">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Serial #</th>
-                                        <th scope="col">Vendor Type</th>
-                                        <th scope="col">Vendor Name</th>
-                                        <th scope="col">Email Id</th>
-                                        <th scope="col">Contact No</th>
-                                        <th scope="col">Location</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Actions</th>
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Serial #</th>
+                                            <th scope="col">Vendor Type</th>
+                                            <th scope="col">Vendor Name</th>
+                                            <th scope="col">Email Id</th>
+                                            <th scope="col">Contact No</th>
+                                            <th scope="col">Location</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Actions</th>
 
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1024</td>
-                                        <td>Mark</td>
-                                        <td>Pulkit Agarwal</td>
-                                        <td>@mdo</td>
-                                        <td>+91-8619203728</td>
-                                        <td>@mdo</td>
-                                        <td>Active</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1025</td>
-                                        <td>Jacob</td>
-                                        <td>Garvit Singhal</td>
-                                        <td>@fat</td>
-                                        <td>+91-8792037284</td>
-                                        <td>@mdo</td>
-                                        <td>Active</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1027</td>
-                                        <td>Larry</td>
-                                        <td>Saranga Saxena</td>
-                                        <td>@twitter</td>
-                                        <td>+91-8674203728</td>
-                                        <td>@mdo</td>
-                                        <td>Inactive</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1025</td>
-                                        <td>Jacob</td>
-                                        <td>Garvit Singhal</td>
-                                        <td>@fat</td>
-                                        <td>+91-8792037284</td>
-                                        <td>@mdo</td>
-                                        <td>Active</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1027</td>
-                                        <td>Larry</td>
-                                        <td>Saranga Saxena</td>
-                                        <td>@twitter</td>
-                                        <td>+91-8674203728</td>
-                                        <td>@mdo</td>
-                                        <td>Inactive</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1025</td>
-                                        <td>Jacob</td>
-                                        <td>Garvit Singhal</td>
-                                        <td>@fat</td>
-                                        <td>+91-8792037284</td>
-                                        <td>@mdo</td>
-                                        <td>Active</td>
-                                        <td>@mdo</td>
-                                    </tr>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1024</td>
+                                            <td>Mark</td>
+                                            <td>Pulkit Agarwal</td>
+                                            <td>@mdo</td>
+                                            <td>+91-8619203728</td>
+                                            <td>@mdo</td>
+                                            <td>Active</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1025</td>
+                                            <td>Jacob</td>
+                                            <td>Garvit Singhal</td>
+                                            <td>@fat</td>
+                                            <td>+91-8792037284</td>
+                                            <td>@mdo</td>
+                                            <td>Active</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1027</td>
+                                            <td>Larry</td>
+                                            <td>Saranga Saxena</td>
+                                            <td>@twitter</td>
+                                            <td>+91-8674203728</td>
+                                            <td>@mdo</td>
+                                            <td>Inactive</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1025</td>
+                                            <td>Jacob</td>
+                                            <td>Garvit Singhal</td>
+                                            <td>@fat</td>
+                                            <td>+91-8792037284</td>
+                                            <td>@mdo</td>
+                                            <td>Active</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1027</td>
+                                            <td>Larry</td>
+                                            <td>Saranga Saxena</td>
+                                            <td>@twitter</td>
+                                            <td>+91-8674203728</td>
+                                            <td>@mdo</td>
+                                            <td>Inactive</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>1025</td>
+                                            <td>Jacob</td>
+                                            <td>Garvit Singhal</td>
+                                            <td>@fat</td>
+                                            <td>+91-8792037284</td>
+                                            <td>@mdo</td>
+                                            <td>Active</td>
+                                            <td>@mdo</td>
+                                        </tr>
 
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
 
@@ -398,19 +408,6 @@
     </main>
 
 
-
-    <script>
-        $(function () {
-            $('a[data-toggle="tab"]').on('click', function (e) {
-                window.localStorage.setItem('activeTab', $(e.target).attr('href'));
-            });
-            var activeTab = window.localStorage.getItem('activeTab');
-            if (activeTab) {
-                $('#myTab a[href="' + activeTab + '"]').tab('show');
-                window.localStorage.removeItem("activeTab");
-            }
-        });
-    </script>
 
 
     <!-- Optional JavaScript -->

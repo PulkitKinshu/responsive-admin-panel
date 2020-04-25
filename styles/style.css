@@ -19,8 +19,16 @@ body {
   font-family: "Baloo Bhaina 2", cursive;
 }
 
-html {
-  font-size: 16px;
+@media (max-width: 800px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 800px) {
+  html {
+    font-size: 16px;
+  }
 }
 
 main {
@@ -28,7 +36,6 @@ main {
 }
 
 main .sidebarMain {
-  width: 300px;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(77, 70, 199, 0.96)), to(rgba(103, 178, 111, 0.83))), url("../assets/road.jpeg");
   background-image: linear-gradient(to bottom, rgba(77, 70, 199, 0.96), rgba(103, 178, 111, 0.83)), url("../assets/road.jpeg");
   background-size: cover;
@@ -62,6 +69,34 @@ main .sidebarMain .logo img {
   width: 33px;
 }
 
+@media (max-width: 600px) {
+  main .sidebarMain {
+    min-height: 100vh;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    z-index: 9999;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1000px) {
+  main .sidebarMain {
+    width: 250px;
+  }
+}
+
+@media (min-width: 1000px) {
+  main .sidebarMain {
+    width: 300px;
+  }
+}
+
 main .sidebarMain ul.nav-list {
   padding: 0 10px 0 11%;
   margin-top: 30px;
@@ -74,6 +109,7 @@ main .sidebarMain ul.nav-list > li {
   list-style: none;
   font-weight: 500;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 main .sidebarMain ul.nav-list > li img {
@@ -111,13 +147,43 @@ main .sidebarMain ul.nav-list .nav-list-child .active {
   position: relative;
   left: -65px;
   width: 300px;
-  padding-left: 75px;
+  padding-left: 65px;
   border-right: 6px solid gold;
 }
 
+@media (max-width: 1000px) {
+  main .sidebarMain ul.nav-list .nav-list-child .active {
+    left: -60px;
+    width: 250px;
+    padding-left: 60px;
+  }
+}
+
 main .main-content {
-  width: calc(100% - 300px);
   background: #f8f8f8;
+}
+
+@media (max-width: 600px) {
+  main .main-content {
+    width: 100%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1000px) {
+  main .main-content {
+    width: calc(100% - 250px);
+  }
+}
+
+@media (min-width: 1000px) {
+  main .main-content {
+    width: calc(100% - 300px);
+  }
+}
+
+main .main-content .main-header span img {
+  width: 1.5rem;
+  cursor: pointer;
 }
 
 main .main-content .main-header h2 {
@@ -146,8 +212,8 @@ main .main-content .main-header .notification-icons > div {
 }
 
 main .main-content .main-header .notification-icons > div img {
-  width: 22px;
-  height: 22px;
+  width: 1.5rem;
+  height: 1.5rem;
   margin-right: 5px;
 }
 
@@ -160,7 +226,12 @@ main .main-content .main-header .notification-icons > div .badge {
 
 main .main-content .secondary-header .input-group {
   position: relative;
-  max-width: 300px;
+}
+
+@media (min-width: 800px) {
+  main .main-content .secondary-header .input-group {
+    max-width: 300px;
+  }
 }
 
 main .main-content .secondary-header .input-group .form-control {
@@ -207,9 +278,38 @@ main .main-content .secondary-header .filter-icons .btn {
   font-weight: 700;
 }
 
+@media (max-width: 800px) {
+  main .main-content .secondary-header .filter-icons .btn {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  main .main-content .secondary-header .filter-icons {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    padding: 10px 0;
+  }
+  main .main-content .secondary-header .filter-icons > div {
+    width: 15%;
+  }
+  main .main-content .secondary-header .filter-icons > div img {
+    width: 50%;
+    max-width: 23px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  main .main-content .secondary-header .filter-icons .btn {
+    width: 75%;
+  }
+}
+
 main .main-content .nav-link.active {
   color: #5b5fa3 !important;
   font-weight: bold;
+  background: transparent;
 }
 
 main .main-content table {
@@ -273,10 +373,28 @@ main .main-content table th {
   white-space: nowrap;
 }
 
-#main {
-  -webkit-transition: margin-left 0.5s;
-  transition: margin-left 0.5s;
-  padding: 16px;
+.sidebar .container-fluid form input[type="radio"]:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  position: relative;
+  background-color: #d1d3d1;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+.sidebar .container-fluid form input[type="radio"]:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  position: relative;
+  background-color: #ffa500;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
