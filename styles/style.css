@@ -6,6 +6,14 @@
           box-sizing: border-box;
 }
 
+a {
+  color: unset !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
 body {
   font-family: "Nunito Sans", sans-serif;
   font-family: "Baloo Bhaina 2", cursive;
@@ -19,16 +27,16 @@ main {
   min-height: 100vh;
 }
 
-main .sidebar {
+main .sidebarMain {
   width: 300px;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(77, 70, 199, 0.96)), to(rgba(103, 178, 111, 0.83))), url("../assets/road.jpeg");
   background-image: linear-gradient(to bottom, rgba(77, 70, 199, 0.96), rgba(103, 178, 111, 0.83)), url("../assets/road.jpeg");
   background-size: cover;
 }
 
-main .sidebar .logo {
+main .sidebarMain .logo {
   font-size: 30px;
-  color: #fff;
+  color: #fff !important;
   display: inline-block;
   margin-left: 11%;
   margin-top: 30px;
@@ -36,11 +44,11 @@ main .sidebar .logo {
   position: relative;
 }
 
-main .sidebar .logo:hover {
+main .sidebarMain .logo:hover {
   text-decoration: unset;
 }
 
-main .sidebar .logo:after {
+main .sidebarMain .logo:after {
   content: "food delivery";
   color: #ffffff;
   font-size: 6px;
@@ -50,58 +58,58 @@ main .sidebar .logo:after {
   top: -5px;
 }
 
-main .sidebar .logo img {
+main .sidebarMain .logo img {
   width: 33px;
 }
 
-main .sidebar ul.nav-list {
-  padding: 0 10px 0 15%;
+main .sidebarMain ul.nav-list {
+  padding: 0 10px 0 11%;
   margin-top: 30px;
 }
 
-main .sidebar ul.nav-list > li {
+main .sidebarMain ul.nav-list > li {
   color: #fff;
   font-size: 1.05rem;
   margin: 30px 0;
   list-style: none;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
 }
 
-main .sidebar ul.nav-list > li img {
+main .sidebarMain ul.nav-list > li img {
   width: 20px;
   position: relative;
   bottom: 2px;
   margin-right: 9px;
 }
 
-main .sidebar ul.nav-list > li .fa {
+main .sidebarMain ul.nav-list > li .fa {
   margin-left: 50%;
   font-size: 15px;
 }
 
-main .sidebar ul.nav-list [data-toggle="collapse"] .fa:before {
+main .sidebarMain ul.nav-list [data-toggle="collapse"] .fa:before {
   content: "\f078";
 }
 
-main .sidebar ul.nav-list [data-toggle="collapse"].collapsed .fa:before {
+main .sidebarMain ul.nav-list [data-toggle="collapse"].collapsed .fa:before {
   content: "\f054";
 }
 
-main .sidebar ul.nav-list .nav-list-child li {
+main .sidebarMain ul.nav-list .nav-list-child li {
   color: #fff;
   font-size: 1rem;
   margin: 30px 0;
   list-style: none;
-  font-weight: 600;
+  font-weight: 500;
   margin-left: 32px;
 }
 
-main .sidebar ul.nav-list .nav-list-child .active {
+main .sidebarMain ul.nav-list .nav-list-child .active {
   background-color: #ffffff54;
   padding: 11px 0;
   position: relative;
-  left: -76px;
+  left: -65px;
   width: 300px;
   padding-left: 75px;
   border-right: 6px solid gold;
@@ -109,6 +117,7 @@ main .sidebar ul.nav-list .nav-list-child .active {
 
 main .main-content {
   width: calc(100% - 300px);
+  background: #f8f8f8;
 }
 
 main .main-content .main-header h2 {
@@ -157,6 +166,8 @@ main .main-content .secondary-header .input-group {
 main .main-content .secondary-header .input-group .form-control {
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
+  border: 1px solid #dddddd;
+  font-size: 16px;
 }
 
 main .main-content .secondary-header .input-group i {
@@ -165,5 +176,116 @@ main .main-content .secondary-header .input-group i {
   top: 30%;
   color: #6c757d;
   z-index: 9;
+  font-size: 14px;
+}
+
+main .main-content .secondary-header .filter-icons > div {
+  border: 1px solid #dddddd;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+main .main-content .secondary-header .filter-icons > div img {
+  width: 50%;
+}
+
+main .main-content .secondary-header .filter-icons .btn {
+  background: #e9bb26;
+  color: white;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+main .main-content .nav-link.active {
+  color: #5b5fa3 !important;
+  font-weight: bold;
+}
+
+main .main-content table {
+  border-top: 0px;
+}
+
+main .main-content table td,
+main .main-content table th {
+  border-top: 0px;
+}
+
+.sidebar {
+  height: 80%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.sidebar .container-fluid > .d-flex span {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #4a4a4a;
+}
+
+.sidebar .container-fluid > .d-flex a {
+  font-size: 2rem;
+  color: #aaaaaa;
+}
+
+.sidebar .container-fluid form label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #565656;
+}
+
+.sidebar .container-fluid form select {
+  font-size: 15px;
+  color: #aaaaaa;
+  height: 45px;
+}
+
+.sidebar .container-fluid form .form-check-label {
+  font-size: 14px;
+  color: #565656;
+}
+
+.sidebar .container-fluid form .btn {
+  background: #e9bb26;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 700;
+  width: 100%;
+  margin-top: 100px;
+  padding: 8px 0;
+  white-space: nowrap;
+}
+
+#main {
+  -webkit-transition: margin-left 0.5s;
+  transition: margin-left 0.5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

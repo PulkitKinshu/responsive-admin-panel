@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>delivr (assignment)</title>
+    <title>Responsive Admin Dashboard (Engg Babu)</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,6 +16,7 @@
 
     <!-- AOS Animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="./scripts/filterToggle.js"></script>
 
 </head>
 
@@ -27,7 +28,7 @@
 
 
 
-        <div class="sidebar">
+        <div class="sidebarMain">
             <a href="#" class="logo"> <img src="./assets/scooter.png" alt=""> delivr</a>
             <ul class="nav-list" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="5000"
                 data-aos-delay="400">
@@ -74,68 +75,342 @@
                     </div>
                 </div>
 
-                <div class="secondary-header d-flex mt-4">
+                <div class="secondary-header d-flex align-items-center justify-content-between mt-4">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search" aria-label="search user"
                             aria-describedby="basic-addon2">
-
                         <i class="fa fa-search"></i>
+                    </div>
 
+                    <div class="filter-icons d-flex">
+                        <div type="btn" onclick="openNav()">
+                            <img src="./assets/filter.png" alt="filter">
+                        </div>
+
+                        <button class="btn px-5">Add Vendor</button>
+
+                    </div>
+
+                </div>
+
+                <div id="mySidebar" class="sidebar shadow">
+                    <div class="container-fluid pt-3 px-4">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>Filter</span>
+                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+                        </div>
+
+                        <form class="mt-5">
+                            <div class="form-group">
+                                <label for="type">Type:</label>
+                                <select class="form-control" id="type">
+                                    <option value="" selected disabled>Select brand name</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+                            </div>
+                            <div class="form-group mt-4">
+                                <label for="location">Location:</label>
+                                <select class="form-control" id="location">
+                                    <option value="" selected disabled>Select location</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select> </div>
+                            <div class="d-flex flex-column mt-4">
+                                <label for="location">Status:</label>
+                                <div class="d-flex">
+                                    <div class="form-check-inline">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="optradio">Active
+                                        </label>
+                                    </div>
+                                    <div class="form-check-inline">
+
+                                        <label class="form-check-label" style="color: #d7d7d7;">
+                                            <input type="radio" class="form-check-input" disabled
+                                                name="optradio">Inactive
+                                        </label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <button type="submit" class="btn">Apply Filters</button>
+                        </form>
                     </div>
                 </div>
 
                 <section class="mt-5">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col">Serial #</th>
-                                <th scope="col">Vendor Type</th>
-                                <th scope="col">Vendor Name</th>
-                                <th scope="col">Email Id</th>
-                                <th scope="col">Contact No</th>
-                                <th scope="col">Location</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Actions</th>
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1024</td>
-                                <td>Mark</td>
-                                <td>Pulkit Agarwal</td>
-                                <td>@mdo</td>
-                                <td>+91-8619203728</td>
-                                <td>@mdo</td>
-                                <td>Active</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <td>1025</td>
-                                <td>Jacob</td>
-                                <td>Garvit Singhal</td>
-                                <td>@fat</td>
-                                <td>+91-8792037284</td>
-                                <td>@mdo</td>
-                                <td>Active</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <td>1027</td>
-                                <td>Larry</td>
-                                <td>Saranga Saxena</td>
-                                <td>@twitter</td>
-                                <td>+91-8674203728</td>
-                                <td>@mdo</td>
-                                <td>Inactive</td>
-                                <td>@mdo</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <ul id="tabs" class="nav nav-tabs">
+                        <li class="nav-item"><a href="" data-target="#home1" data-toggle="tab"
+                                class="nav-link  active">All Vendors</a></li>
+                        <li class="nav-item"><a href="" data-target="#profile1" data-toggle="tab"
+                                class="nav-link ">Active</a></li>
+                        <li class="nav-item"><a href="" data-target="#messages1" data-toggle="tab"
+                                class="nav-link ">Rejected</a></li>
+                    </ul>
+
+                    <div id="tabsContent" class="tab-content">
+                        <div id="home1" class="tab-pane fade  active show">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Serial #</th>
+                                        <th scope="col">Vendor Type</th>
+                                        <th scope="col">Vendor Name</th>
+                                        <th scope="col">Email Id</th>
+                                        <th scope="col">Contact No</th>
+                                        <th scope="col">Location</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Actions</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1025</td>
+                                        <td>Jacob</td>
+                                        <td>Garvit Singhal</td>
+                                        <td>@fat</td>
+                                        <td>+91-8792037284</td>
+                                        <td>@mdo</td>
+                                        <td>Active</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1027</td>
+                                        <td>Larry</td>
+                                        <td>Saranga Saxena</td>
+                                        <td>@twitter</td>
+                                        <td>+91-8674203728</td>
+                                        <td>@mdo</td>
+                                        <td>Inactive</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1025</td>
+                                        <td>Jacob</td>
+                                        <td>Garvit Singhal</td>
+                                        <td>@fat</td>
+                                        <td>+91-8792037284</td>
+                                        <td>@mdo</td>
+                                        <td>Active</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1024</td>
+                                        <td>Mark</td>
+                                        <td>Pulkit Agarwal</td>
+                                        <td>@mdo</td>
+                                        <td>+91-8619203728</td>
+                                        <td>@mdo</td>
+                                        <td>Active</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1025</td>
+                                        <td>Jacob</td>
+                                        <td>Garvit Singhal</td>
+                                        <td>@fat</td>
+                                        <td>+91-8792037284</td>
+                                        <td>@mdo</td>
+                                        <td>Active</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1027</td>
+                                        <td>Larry</td>
+                                        <td>Saranga Saxena</td>
+                                        <td>@twitter</td>
+                                        <td>+91-8674203728</td>
+                                        <td>@mdo</td>
+                                        <td>Inactive</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1025</td>
+                                        <td>Jacob</td>
+                                        <td>Garvit Singhal</td>
+                                        <td>@fat</td>
+                                        <td>+91-8792037284</td>
+                                        <td>@mdo</td>
+                                        <td>Active</td>
+                                        <td>@mdo</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="profile1" class="tab-pane fade">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Serial #</th>
+                                        <th scope="col">Vendor Type</th>
+                                        <th scope="col">Vendor Name</th>
+                                        <th scope="col">Email Id</th>
+                                        <th scope="col">Contact No</th>
+                                        <th scope="col">Location</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Actions</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1025</td>
+                                        <td>Jacob</td>
+                                        <td>Garvit Singhal</td>
+                                        <td>@fat</td>
+                                        <td>+91-8792037284</td>
+                                        <td>@mdo</td>
+                                        <td>Active</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1025</td>
+                                        <td>Jacob</td>
+                                        <td>Garvit Singhal</td>
+                                        <td>@fat</td>
+                                        <td>+91-8792037284</td>
+                                        <td>@mdo</td>
+                                        <td>Active</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1024</td>
+                                        <td>Mark</td>
+                                        <td>Pulkit Agarwal</td>
+                                        <td>@mdo</td>
+                                        <td>+91-8619203728</td>
+                                        <td>@mdo</td>
+                                        <td>Active</td>
+                                        <td>@mdo</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>1027</td>
+                                        <td>Larry</td>
+                                        <td>Saranga Saxena</td>
+                                        <td>@twitter</td>
+                                        <td>+91-8674203728</td>
+                                        <td>@mdo</td>
+                                        <td>Inactive</td>
+                                        <td>@mdo</td>
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="messages1" class="tab-pane fade">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Serial #</th>
+                                        <th scope="col">Vendor Type</th>
+                                        <th scope="col">Vendor Name</th>
+                                        <th scope="col">Email Id</th>
+                                        <th scope="col">Contact No</th>
+                                        <th scope="col">Location</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Actions</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1024</td>
+                                        <td>Mark</td>
+                                        <td>Pulkit Agarwal</td>
+                                        <td>@mdo</td>
+                                        <td>+91-8619203728</td>
+                                        <td>@mdo</td>
+                                        <td>Active</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1025</td>
+                                        <td>Jacob</td>
+                                        <td>Garvit Singhal</td>
+                                        <td>@fat</td>
+                                        <td>+91-8792037284</td>
+                                        <td>@mdo</td>
+                                        <td>Active</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1027</td>
+                                        <td>Larry</td>
+                                        <td>Saranga Saxena</td>
+                                        <td>@twitter</td>
+                                        <td>+91-8674203728</td>
+                                        <td>@mdo</td>
+                                        <td>Inactive</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1025</td>
+                                        <td>Jacob</td>
+                                        <td>Garvit Singhal</td>
+                                        <td>@fat</td>
+                                        <td>+91-8792037284</td>
+                                        <td>@mdo</td>
+                                        <td>Active</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1027</td>
+                                        <td>Larry</td>
+                                        <td>Saranga Saxena</td>
+                                        <td>@twitter</td>
+                                        <td>+91-8674203728</td>
+                                        <td>@mdo</td>
+                                        <td>Inactive</td>
+                                        <td>@mdo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1025</td>
+                                        <td>Jacob</td>
+                                        <td>Garvit Singhal</td>
+                                        <td>@fat</td>
+                                        <td>+91-8792037284</td>
+                                        <td>@mdo</td>
+                                        <td>Active</td>
+                                        <td>@mdo</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
                 </section>
             </div>
         </div>
     </main>
+
+
+
+    <script>
+        $(function () {
+            $('a[data-toggle="tab"]').on('click', function (e) {
+                window.localStorage.setItem('activeTab', $(e.target).attr('href'));
+            });
+            var activeTab = window.localStorage.getItem('activeTab');
+            if (activeTab) {
+                $('#myTab a[href="' + activeTab + '"]').tab('show');
+                window.localStorage.removeItem("activeTab");
+            }
+        });
+    </script>
 
 
     <!-- Optional JavaScript -->

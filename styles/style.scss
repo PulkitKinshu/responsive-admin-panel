@@ -6,6 +6,13 @@
   box-sizing: border-box;
 }
 
+a {
+  color: unset !important;
+}
+a:hover {
+  text-decoration: none !important;
+}
+
 body {
   font-family: "Nunito Sans", sans-serif;
   font-family: "Baloo Bhaina 2", cursive;
@@ -18,10 +25,10 @@ html {
 main {
   min-height: 100vh;
 
-  .sidebar {
+  .sidebarMain {
     .logo {
       font-size: 30px;
-      color: #fff;
+      color: #fff !important;
       display: inline-block;
       margin-left: 11%;
       margin-top: 30px;
@@ -52,14 +59,14 @@ main {
     background-size: cover;
 
     ul.nav-list {
-      padding: 0 10px 0 15%;
+      padding: 0 10px 0 11%;
       margin-top: 30px;
       > li {
         color: #fff;
         font-size: 1.05rem;
         margin: 30px 0;
         list-style: none;
-        font-weight: 600;
+        font-weight: 500;
         cursor: pointer;
 
         img {
@@ -89,7 +96,7 @@ main {
           font-size: 1rem;
           margin: 30px 0;
           list-style: none;
-          font-weight: 600;
+          font-weight: 500;
           margin-left: 32px;
         }
 
@@ -97,7 +104,7 @@ main {
           background-color: #ffffff54;
           padding: 11px 0;
           position: relative;
-          left: -76px;
+          left: -65px;
           width: 300px;
           padding-left: 75px;
           border-right: 6px solid gold;
@@ -107,6 +114,7 @@ main {
   }
   .main-content {
     width: calc(100% - 300px);
+    background: #f8f8f8;
 
     .main-header {
       h2 {
@@ -146,6 +154,8 @@ main {
         .form-control {
           border-top-right-radius: 0.25rem;
           border-bottom-right-radius: 0.25rem;
+          border: 1px solid #dddddd;
+          font-size: 16px;
         }
 
         i {
@@ -154,8 +164,115 @@ main {
           top: 30%;
           color: #6c757d;
           z-index: 9;
+          font-size: 14px;
         }
       }
+
+      .filter-icons {
+        > div {
+          border: 1px solid #dddddd;
+          width: 40px;
+          height: 40px;
+          margin-right: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+
+          img {
+            width: 50%;
+          }
+        }
+
+        .btn {
+          background: #e9bb26;
+          color: white;
+          font-size: 0.88rem;
+          font-weight: 700;
+        }
+      }
+    }  
+    .nav-link.active{
+      color: #5b5fa3 !important;
+      font-weight: bold;
     }
+    table {
+      border-top: 0px;
+      td,
+      th {
+        border-top: 0px;
+      }
+    }
+  }
+}
+
+.sidebar {
+  height: 80%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.5s;
+
+  .container-fluid {
+    > .d-flex {
+      span {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #4a4a4a;
+      }
+
+      a {
+        font-size: 2rem;
+        color: #aaaaaa;
+      }
+    }
+
+    form {
+      label {
+        font-size: 13px;
+        font-weight: 600;
+        color: #565656;
+      }
+
+      select {
+        font-size: 15px;
+        color: #aaaaaa;
+        height: 45px;
+      }
+      .form-check-label {
+        font-size: 14px;
+        color: #565656;
+      }
+
+      .btn {
+        background: #e9bb26;
+        color: white;
+        font-size: 0.9rem;
+        font-weight: 700;
+        width: 100%;
+        margin-top: 100px;
+        padding: 8px 0;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+#main {
+  transition: margin-left 0.5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+  .sidebar a {
+    font-size: 18px;
   }
 }
